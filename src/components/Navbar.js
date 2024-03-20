@@ -26,7 +26,18 @@ export default function ButtonAppBar() {
             Products
           </Typography>
             </Link>
-         
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link to='/Registration'>
+            <Typography>
+            Registration
+          </Typography>
+            </Link>
+            <Link to='/Allusers'>
+            <Typography>
+          Register Users
+          </Typography>
+            </Link>
           </Typography>
           <Link to='/card'>
           <Button color="inherit">MY Bag :{products.length}</Button>

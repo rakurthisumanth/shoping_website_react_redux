@@ -9,10 +9,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ButtonAppBar from './Navbar';
 import { useSelector } from 'react-redux';
-
+import { useDispatch } from 'react-redux';
+import { removeItems } from '../store/cartSlice';
 
 function Cartdetails() {
+    const dispatch=useDispatch()
     const products=useSelector(state=>state.cart)
+     const Remove=(item)=>{
+        dispatch(removeItems(item.id))
+     }
     return (
         <div>
             <ButtonAppBar/>
@@ -35,7 +40,7 @@ function Cartdetails() {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                               
+                            <Button size="small" onClick={()=>Remove(item)}>Remove Cart</Button>
                             </CardActions>
                         </Card>
                     </Grid>
